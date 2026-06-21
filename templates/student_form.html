@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<h2>Add Student</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Name:</label>
+    <input type="text" name="name"><br><br>
+
+    <label>Age:</label>
+    <input type="number" name="age"><br><br>
+
+    <label>Gender:</label>
+    <input type="text" name="gender"><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Phone:</label>
+    <input type="text" name="phone"><br><br>
+
+    <label>Course:</label>
+    <input type="text" name="course"><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="address" rows="4" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Save">
+</form>
+
+</body>
+</html>

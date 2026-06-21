@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Teacher</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<h2>Update Teacher</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ obj.name }}"><br><br>
+
+    <label>Subject:</label>
+    <input type="text" name="subject" value="{{ obj.subject }}"><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ obj.email }}"><br><br>
+
+    <label>Phone:</label>
+    <input type="text" name="phone" value="{{ obj.phone }}"><br><br>
+
+    <label>Qualification:</label>
+    <input type="text" name="qualification" value="{{ obj.qualification }}"><br><br>
+
+    <label>Experience:</label>
+    <input type="number" name="experience" value="{{ obj.experience }}"><br><br>
+
+    <input type="submit" value="Update">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Teacher Management</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <h2>Student Teacher Management</h2>
+
+        <a href="{% url 'student_all' %}" class="btn">
+            Student
+        </a>
+
+        <a href="{% url 'teacher_all' %}" class="btn">
+            Teacher
+        </a>
+
+    </div>
+
+</body>
+</html>

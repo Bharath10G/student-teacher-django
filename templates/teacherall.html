@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Records</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<h1>Teacher Records</h1>
+
+<a href="{% url 'teacher_form' %}">Add Teacher</a>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Qualification</th>
+        <th>Experience</th>
+        <th>Joining Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for teacher in teachers %}
+    <tr>
+        <td>{{ teacher.t_id }}</td>
+        <td>{{ teacher.name }}</td>
+        <td>{{ teacher.subject }}</td>
+        <td>{{ teacher.email }}</td>
+        <td>{{ teacher.phone }}</td>
+        <td>{{ teacher.qualification }}</td>
+        <td>{{ teacher.experience }}</td>
+        <td>{{ teacher.joining_date }}</td>
+
+        <td>
+            <a href="{% url 'teacher_update' teacher.t_id %}">Update</a>
+        </td>
+
+        <td>
+            <a href="{% url 'teacher_delete' teacher.t_id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
